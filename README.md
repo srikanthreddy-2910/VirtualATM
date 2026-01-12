@@ -22,6 +22,7 @@ Concurrent session prevention
 
 Auto session timeout
 
+
 **💳 Banking Operations**
 
 Cash Withdrawal (denomination-aware)
@@ -36,6 +37,7 @@ Mini Statement
 
 PIN Change
 
+
 **🏧 ATM Intelligence**
 
 ATM cash availability validation
@@ -45,6 +47,7 @@ Exact denomination calculation
 ATM cash balance tracking
 
 Withdrawal blocking when ATM is empty
+
 
 **🧾 Audit & Compliance**
 
@@ -99,6 +102,7 @@ atm_denominations
 
 audit_logs
 
+
 **Relationships**
 
 One customer → many accounts
@@ -108,6 +112,7 @@ One account → one ATM card
 One ATM → many sessions & transactions
 
 One card → many transactions, logs & sessions
+
 
 **Engineering**
 
@@ -121,7 +126,7 @@ Row-level locking (FOR UPDATE)
 
 ACID-compliant transactions
 
---
+---
 
 ## 🧩 Backend Tech Stack
 
@@ -137,6 +142,7 @@ dotenv
 
 CORS
 
+
 **Engineering Practices**
 
 START TRANSACTION / COMMIT / ROLLBACK
@@ -149,7 +155,7 @@ Audit logging for sensitive actions
 
 Denomination-aware withdrawals
 
---
+---
 
 ## 🌐 API Highlights
 
@@ -167,6 +173,7 @@ End Session	POST /api/atm/session/end
 
 Block Card	POST /api/atm/card/block
 
+
 **💰 Transactions**
 
 Action	Endpoint
@@ -178,6 +185,7 @@ Deposit	POST /api/transactions/deposit
 Transfer	POST /api/transactions/transfer
 
 Mini Statement	GET /api/transactions/statement
+
 
 **👤 Accounts**
 
@@ -210,6 +218,7 @@ Shadcn UI
 Radix UI
 
 Sonner / Toast
+
 
 **🔁 Session Handling**
 
@@ -245,6 +254,7 @@ npm run dev
 Runs on
 http://localhost:5173
 ```
+
 
 **🧪 Example Test Cards**
 
