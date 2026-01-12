@@ -1,10 +1,11 @@
-🏦 VirtualATM – Full Stack ATM Simulator
+🏦 VirtualATM – Full-Stack ATM Simulator
 
-A production-grade Virtual ATM system built with React, Node.js, Express, and MySQL, designed to simulate a real-world ATM with secure banking operations, session handling, audit logging, cash denomination management, and concurrency control.
+A production-grade Virtual ATM System built using React, Node.js, Express, and MySQL, designed to simulate how a real-world ATM network works — including secure authentication, session control, audit logging, cash management, and transaction safety.
 
-This project replicates how an actual ATM works — from card insertion → PIN validation → session creation → transactions → audit trails → auto logout — using enterprise-level backend design and a ATM-style frontend.
+This is not a CRUD demo.
+It replicates how an actual ATM operates — from card insertion → PIN verification → session creation → transactions → audit trails → auto-logout.
 
-🚀 Features
+🚀 Key Features
 🔐 Security & Authentication
 
 Encrypted PIN storage
@@ -15,7 +16,7 @@ Temporary lock & auto-unlock
 
 Card expiry detection
 
-Card status tracking (ACTIVE, BLOCKED, LOST, etc)
+Card status tracking (ACTIVE, BLOCKED, LOST, EXPIRED)
 
 Concurrent session prevention
 
@@ -37,38 +38,45 @@ PIN Change
 
 🏧 ATM Intelligence
 
-Cash availability validation
+ATM cash availability validation
 
-Exact denomination validation
+Exact denomination calculation
 
-Cash balance tracking per ATM
+ATM cash balance tracking
+
+Withdrawal blocking when ATM is empty
 
 🧾 Audit & Compliance
 
-Login / logout logs
+Login & logout tracking
 
-PIN change tracking
+PIN change history
 
 Session timeout logs
 
-Failure and success tracking
+Success & failure tracking
 
-JSON-based activity details
+JSON-based activity metadata
 
 🧠 System Architecture
-React Frontend → Express API → MySQL Database
-│ │ │
-Session Context Controllers Transactions + Locks
+React Frontend
+      ↓
+Express API (Controllers)
+      ↓
+MySQL Database
+      ↓
+Transactions + Row Locks
+      ↓
+Audit Logs & Sessions
 
-Design Pattern:
-
-Route → Controller → MySQL (Transaction-Safe)
+Design Pattern
+Route → Controller → Database (ACID Transactions)
 
 🗄️ Database Design
 
-The database follows banking-grade relational modeling:
+The database is modeled using banking-grade relational design.
 
-Core tables
+Core Tables
 
 customers
 
@@ -78,15 +86,15 @@ atm_cards
 
 atm_machines
 
+atm_sessions
+
 transactions
 
 atm_denominations
 
 audit_logs
 
-atm_sessions
-
-Supports:
+Relationships
 
 One customer → many accounts
 
@@ -94,22 +102,21 @@ One account → one ATM card
 
 One ATM → many sessions & transactions
 
-One card → many transactions, logs, sessions
+One card → many transactions, logs & sessions
 
-Built with:
+Engineering
 
 Foreign keys
 
-Check constraints
-
 Unique constraints
+
+Check constraints
 
 Row-level locking (FOR UPDATE)
 
 ACID-compliant transactions
 
-🧩 Backend
-🛠 Tech Stack
+🧩 Backend Tech Stack
 
 Node.js
 
@@ -123,47 +130,37 @@ dotenv
 
 CORS
 
-📁 Folder Structure
-backend/
-├── src/
-│ ├── config/
-│ ├── controllers/
-│ ├── routes/
-│ └── utils/
-└── server.js
-
-🔒 Key Engineering Practices
+Engineering Practices
 
 START TRANSACTION / COMMIT / ROLLBACK
 
 Row locking for money movement
 
-Atomic cash updates
+Atomic balance updates
 
-Audit logging for all sensitive actions
+Audit logging for sensitive actions
 
 Denomination-aware withdrawals
 
 🌐 API Highlights
 🔐 ATM
-Action Endpoint
-Insert Card POST /api/atm/card/insert
-Validate PIN POST /api/atm/card/validate
-Start Session POST /api/atm/session/start
-End Session POST /api/atm/session/end
-Block Card POST /api/atm/card/block
+Action	Endpoint
+Insert Card	POST /api/atm/card/insert
+Validate PIN	POST /api/atm/card/validate
+Start Session	POST /api/atm/session/start
+End Session	POST /api/atm/session/end
+Block Card	POST /api/atm/card/block
 💰 Transactions
-Action Endpoint
-Withdraw POST /api/transactions/withdraw
-Deposit POST /api/transactions/deposit
-Transfer POST /api/transactions/transfer
-Mini Statement GET /api/transactions/statement
+Action	Endpoint
+Withdraw	POST /api/transactions/withdraw
+Deposit	POST /api/transactions/deposit
+Transfer	POST /api/transactions/transfer
+Mini Statement	GET /api/transactions/statement
 👤 Accounts
-Action Endpoint
-Balance GET /api/accounts/balance
-Account Info GET /api/accounts
-🖥️ Frontend
-🧰 Tech Stack
+Action	Endpoint
+Balance	GET /api/accounts/balance
+Account Info	GET /api/accounts
+🖥️ Frontend Tech Stack
 
 React 19
 
@@ -183,7 +180,7 @@ Shadcn UI
 
 Radix UI
 
-Sonner & Toast
+Sonner / Toast
 
 🔁 Session Handling
 
@@ -191,17 +188,17 @@ Session created after PIN verification
 
 Stored in React Context + sessionStorage
 
-Auto logout after inactivity
+Auto logout on inactivity
 
-Backend session end is called automatically
+Backend session closed automatically
 
 Protected routes block unauthorized access
 
 🧠 Why This Project Is Special
 
-This is not just CRUD.
+This is not a form-based banking app.
 
-This system implements real banking logic:
+This system implements real ATM logic:
 
 Daily withdrawal limits
 
@@ -217,13 +214,14 @@ Transaction atomicity
 
 Compliance-grade audit trails
 
-This is how real ATM networks are designed.
+This is how real banking systems are engineered.
 
 ▶️ Running the Project
 Backend
 cd backend
 npm install
 node server.js
+
 
 Runs on
 http://localhost:5000
@@ -233,41 +231,13 @@ cd frontend
 npm install
 npm run dev
 
+
 Runs on
 http://localhost:5173
 
-🧪 Test Card (Example)
-Card Number: 9014302429901430
-PIN: 9014
-
-Card Number:9491943909949194
-PIN: 9491
+🧪 Test Cards
+Card Number	PIN
+9014302429901430	9014
+9491943909949194	9491
 
 ATM ID: 1
-
-📄 Resume-Ready Project Description
-
-You can paste this directly into your resume, LinkedIn, or portfolio.
-
-VirtualATM – Full Stack ATM Banking Simulator
-
-Tech Stack:
-React, Vite, Tailwind CSS, Framer Motion, Node.js, Express, MySQL, Axios, bcrypt
-
-Designed and built a production-grade ATM simulation system that replicates the complete lifecycle of a real ATM including card authentication, PIN security, session management, cash withdrawal, deposits, fund transfers, audit logging, and denomination tracking.
-
-Built a transaction-safe backend using MySQL with row-level locking, foreign keys, and ACID-compliant operations to ensure accurate handling of money, prevent race conditions, and maintain banking-grade data integrity.
-
-Implemented:
-
-Secure PIN verification with hashing, failed attempt tracking, and temporary card locking
-
-Session-based ATM flow with auto-logout and concurrent session prevention
-
-Denomination-aware withdrawals validating exact note availability before dispensing
-
-Daily withdrawal limits and account balance enforcement
-
-Audit logging system capturing all security-sensitive actions (login, PIN change, failures, timeouts)
-
-Real-time ATM cash management and online/offline detection
