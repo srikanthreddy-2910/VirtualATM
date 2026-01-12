@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 10%;
+    --foreground: 160 100% 70%;
+
+    --card: 210 45% 12%;
+    --card-foreground: 160 100% 70%;
+
+    --popover: 210 45% 12%;
+    --popover-foreground: 160 100% 70%;
+
+    --primary: 160 100% 45%;
+    --primary-foreground: 210 50% 5%;
+
+    --secondary: 35 100% 50%;
+    --secondary-foreground: 210 50% 5%;
+
+    --muted: 210 30% 20%;
+    --muted-foreground: 160 40% 60%;
+
+    --accent: 200 100% 50%;
+    --accent-foreground: 210 50% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 50% 25%;
+    --input: 210 40% 15%;
+    --ring: 160 100% 45%;
+
+    --radius: 0.5rem;
+
+    --atm-screen: 210 60% 8%;
+    --atm-bezel: 210 20% 15%;
+    --atm-button: 210 30% 25%;
+    --atm-button-active: 160 100% 35%;
+    --atm-glow: 160 100% 50%;
+    --atm-slot: 210 50% 5%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Orbitron", sans-serif;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--atm-glow) / 0.8),
+      0 0 20px hsl(var(--atm-glow) / 0.5), 0 0 30px hsl(var(--atm-glow) / 0.3);
+  }
+
+  .text-glow-amber {
+    text-shadow: 0 0 10px hsl(var(--atm-amber) / 0.8),
+      0 0 20px hsl(var(--atm-amber) / 0.5);
+  }
+
+  .screen-scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(160 100% 50% / 0.03) 2px,
+      hsl(160 100% 50% / 0.03) 4px
+    );
+  }
+
+  .atm-button-3d {
+    box-shadow: 0 4px 0 hsl(210 30% 15%), 0 6px 10px hsl(0 0% 0% / 0.5),
+      inset 0 1px 0 hsl(210 30% 40%);
+    transition: all 0.1s ease;
+  }
+
+  .atm-button-3d:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 hsl(210 30% 15%), 0 2px 5px hsl(0 0% 0% / 0.3),
+      inset 0 1px 0 hsl(210 30% 35%);
+  }
+}

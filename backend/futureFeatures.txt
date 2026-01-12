@@ -1,0 +1,21 @@
+🧾 5️⃣ RECEIPT & CONFIRMATION SYSTEM
+Receipt APIs
+POST   /api/receipts/generate
+POST   /api/receipts/email
+POST   /api/receipts/sms
+
+Receipt Types
+Multi-language support
+ATM receipt printing (simulated)
+Email / SMS confirmation
+
+
+🚨 8️⃣ ERROR HANDLING & VALIDATION (Day 11–12)
+Error APIs
+POST   /api/errors/log
+GET    /api/errors/history
+
+
+Security Features:
+JWT authentication
+bcrypt PIN hashing
