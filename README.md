@@ -1,6 +1,6 @@
 ## 🏦 VirtualATM – Full-Stack ATM Simulator
 
-**Live Demo:** 👉 https://virtual-atm.vercel.app
+**Live Demo:**  👉 https://virtual-atm.vercel.app
 
 A production-grade Virtual ATM System built using React, Node.js, Express, and MySQL, designed to simulate how a real-world ATM network works — including secure authentication, session control, audit logging, cash management, and transaction safety.
 
@@ -197,7 +197,7 @@ Action	Endpoint
 Balance	GET /api/accounts/balance
 
 Account Info	GET /api/accounts
-```bash
+```
 
 ---
 
