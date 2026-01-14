@@ -1,5 +1,6 @@
 ## 🏦 VirtualATM – Full-Stack ATM Simulator
 
+**Live Demo:** 👉 https://virtual-atm.vercel.app
 A production-grade Virtual ATM System built using React, Node.js, Express, and MySQL, designed to simulate how a real-world ATM network works — including secure authentication, session control, audit logging, cash management, and transaction safety.
 
 It replicates how an actual ATM operates — from card insertion → PIN verification → session creation → transactions → audit trails → auto-logout.
@@ -159,6 +160,7 @@ Denomination-aware withdrawals
 
 ## 🌐 API Highlights
 
+```bash
 **🔐 ATM**
 
 Action	Endpoint
@@ -194,6 +196,7 @@ Action	Endpoint
 Balance	GET /api/accounts/balance
 
 Account Info	GET /api/accounts
+```bash
 
 ---
 
@@ -257,11 +260,12 @@ http://localhost:5173
 
 
 **🧪 Example Test Cards**
+```bash
+  Card Number     	PIN
 
-  Card Number        	PIN
+9014302429901430	     9014
 
-9014302429901430	    9014
-
-9491943909949194	    9491
+9491943909949194	     9491
 
 ATM ID: 1
+```
