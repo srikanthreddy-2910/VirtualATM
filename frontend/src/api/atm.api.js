@@ -1,11 +1,11 @@
-import axios from "axios";
+import API from "./constant.api";
 
-const API = axios.create({
-  baseURL: "http://localhost:5000/api",
-});
-
-export const insertCard = (cardNumber, machineId) =>
-  API.post("/atm/card/insert", { cardNumber, machineId });
+export const insertCard = (cardNumber, machineId) => {
+  return API.post("/atm/card/insert", {
+    cardNumber,
+    machineId,
+  });
+};
 
 export const validateCard = (cardNumber, pin, machineId) =>
   API.post("/atm/card/validate", { cardNumber, pin, machineId });
