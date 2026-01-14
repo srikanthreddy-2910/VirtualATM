@@ -21,7 +21,7 @@ export default function WelcomeScreen() {
       setIsLoading(true);
 
       const res = await insertCard(cardNumber, MACHINE_ID);
-      
+
       console.log("insertCard res", res);
       if (res.data.success) {
         const { cardId } = res.data.data;
@@ -173,6 +173,6 @@ export default function WelcomeScreen() {
           </p>
         </div>
       </ATMScreen>
-    </ATMMachine> 
+    </ATMMachine>
   );
 }
