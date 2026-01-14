@@ -164,39 +164,39 @@ Denomination-aware withdrawals
 ```bash
 **🔐 ATM**
 
-Action	Endpoint
+Action	                  Endpoint
 
-Insert Card	POST /api/atm/card/insert
+Insert Card	            POST      /api/atm/card/insert
 
-Validate PIN	POST /api/atm/card/validate
+Validate PIN	      POST      /api/atm/card/validate
 
-Start Session	POST /api/atm/session/start
+Start Session	      POST      /api/atm/session/start
 
-End Session	POST /api/atm/session/end
+End Session	            POST      /api/atm/session/end
 
-Block Card	POST /api/atm/card/block
+Block Card	            POST      /api/atm/card/block
 
 
 **💰 Transactions**
 
-Action	Endpoint
+Action	                  Endpoint
 
-Withdraw	POST /api/transactions/withdraw
+Withdraw	            POST      /api/transactions/withdraw
 
-Deposit	POST /api/transactions/deposit
+Deposit	            POST      /api/transactions/deposit
 
-Transfer	POST /api/transactions/transfer
+Transfer	            POST      /api/transactions/transfer
 
-Mini Statement	GET /api/transactions/statement
+Mini Statement	      GET       /api/transactions/statement
 
 
 **👤 Accounts**
 
-Action	Endpoint
+Action	                  Endpoint
 
-Balance	GET /api/accounts/balance
+Balance	            GET      /api/accounts/balance
 
-Account Info	GET /api/accounts
+Account Info	      GET      /api/accounts
 ```
 
 ---
