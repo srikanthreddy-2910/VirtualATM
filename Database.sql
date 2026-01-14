@@ -1,4 +1,3 @@
-DROP DATABASE IF EXISTS virtual_atm;
 CREATE DATABASE IF NOT EXISTS virtual_atm;
 USE virtual_atm;
 
@@ -109,37 +108,4 @@ CREATE TABLE atm_sessions (
     FOREIGN KEY (card_id) REFERENCES atm_cards(card_id),
     FOREIGN KEY (machine_id) REFERENCES atm_machines(machine_id)
 );
-
-
-INSERT INTO customers (full_name, phone_number, email, address)
-VALUES
-('Srikanth Reddy', '9014302429', 'srikanth@gmail.com', 'Bangalore'),
-('Sridhar Reddy', '9491943909', 'sridhar@gmail.com', 'Hyderabad');
-
-INSERT INTO accounts (customer_id, account_number, account_type, balance)
-VALUES
-(1, '9014302429901430', 'SAVINGS', 75000.00),
-(2, '9491943909949194', 'SAVINGS', 120000.00);
-
-INSERT INTO atm_cards (
-  account_id,
-  atm_card_number,
-  pin,
-  daily_withdraw_limit,
-  expiry_date,
-  status
-)
-VALUES
-(1, '9014302429901430', '9014', 5000, '2028-12-31', 'ACTIVE'),
-(2, '9491943909949194', '9491', 5000, '2029-06-30', 'ACTIVE');
-
-INSERT INTO atm_machines (location, cash_balance, is_online)
-VALUES
-('Main Road ATM - Hyderabad', 155000, true);
-
-INSERT INTO atm_denominations (machine_id, note_value, note_count)
-VALUES
-(1, 500, 200),
-(1, 100, 300),
-(1, 50, 500);
 
